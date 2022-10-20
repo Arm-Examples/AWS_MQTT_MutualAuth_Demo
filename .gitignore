@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Keil Studio related files
+/tmp
+/out
+*.cprj
+.clangd
