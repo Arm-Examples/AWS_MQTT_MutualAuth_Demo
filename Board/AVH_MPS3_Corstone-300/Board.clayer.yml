@@ -1,7 +1,7 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.4/tools/projmgr/schemas/clayer.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/2.0.0/tools/projmgr/schemas/clayer.schema.json
 
 layer:
-  # type: Board
+  type: Board
   # name: AVH_MPS3_Cortsone-300
   # variant: IoT-VSocket-Ethernet
   description: Board setup for IoT with VSocket and Ethernet interface
@@ -28,10 +28,10 @@ layer:
   processor:
     trustzone: secure
 
-  add-paths:
+  add-path:
     - .
 
-  defines:
+  define:
     - CMSIS_VIN
     - CMSIS_VOUT
 

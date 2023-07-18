@@ -1,0 +1,27 @@
+build-idx:
+  generated-by: csolution version 2.0.0
+  csolution: Demo.csolution.yml
+  cprojects:
+    - cproject: Demo.cproject.yml
+      clayers:
+        - clayer: $Socket-Layer$
+        - clayer: $Board-Layer$
+  cbuilds:
+    - cbuild: Demo.Debug+AVH.cbuild.yml
+      project: Demo
+      configuration: .Debug+AVH
+    - cbuild: Demo.Debug+IP-Stack.cbuild.yml
+      project: Demo
+      configuration: .Debug+IP-Stack
+    - cbuild: Demo.Debug+WiFi.cbuild.yml
+      project: Demo
+      configuration: .Debug+WiFi
+    - cbuild: Demo.Release+AVH.cbuild.yml
+      project: Demo
+      configuration: .Release+AVH
+    - cbuild: Demo.Release+IP-Stack.cbuild.yml
+      project: Demo
+      configuration: .Release+IP-Stack
+    - cbuild: Demo.Release+WiFi.cbuild.yml
+      project: Demo
+      configuration: .Release+WiFi

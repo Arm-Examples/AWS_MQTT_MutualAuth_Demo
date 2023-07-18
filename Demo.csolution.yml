@@ -1,6 +1,10 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.4/tools/projmgr/schemas/csolution.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/2.0.0/tools/projmgr/schemas/csolution.schema.json
 
 solution:
+  description: This demo application connects to AWS MQTT broker using TLS with mutual authentication between the client and the server
+  created-for: CMSIS-Toolbox@2.0.0
+  compiler: AC6
+
   packs:
     - pack: ARM::CMSIS
     - pack: ARM::CMSIS-Driver
@@ -27,12 +31,22 @@ solution:
 
   target-types:
     - type: IP-Stack
+      board: NXP::EVKB-IMXRT1050_MDK
       device: NXP::MIMXRT1052DVL6B
+      variables:
+        - Socket-Layer: ./Socket/FreeRTOS+TCP/Socket.clayer.yml
+        - Board-Layer:  ./Board/IMXRT1050-EVKB/Board.clayer.yml
     - type: WiFi
       board: STMicroelectronics::B-U585I-IOT02A
       device: STMicroelectronics::STM32U585AIIx
+      variables:
+        - Socket-Layer: ./Socket/WiFi/Socket.clayer.yml
+        - Board-Layer:  ./Board/B-U585I-IOT02A/Board.clayer.yml
     - type: AVH
-      device: ARM::SSE-300-MPS3
+      board: ARM::V2M-MPS3-SSE-300-FVP
+      variables:
+        - Socket-Layer: ./Socket/VSocket/Socket.clayer.yml
+        - Board-Layer:  ./Board/AVH_MPS3_Corstone-300/Board.clayer.yml
 
   build-types:
     - type: Debug
