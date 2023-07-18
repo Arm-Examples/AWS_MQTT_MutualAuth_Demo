@@ -57,3 +57,5 @@ dkms.conf
 *.cprj
 .clangd
 **@*
+*.cbuild.yml
+*.cbuild-idx.yml
