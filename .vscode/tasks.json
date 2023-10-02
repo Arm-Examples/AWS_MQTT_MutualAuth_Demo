@@ -28,19 +28,26 @@
 			"group": "build"
 		},
 		{
+			"label": "Flash Device",
 			"type": "embedded-debug.flash",
+			"program": "${command:embedded-debug.getApplicationFile}",
 			"serialNumber": "${command:device-manager.getSerialNumber}",
-			"program": "${command:cmsis-csolution.getBinaryFile}",
-			"cmsisPack": "${env:CMSIS_PACK_ROOT}/.Download/Keil.STM32U5xx_DFP.2.0.0.pack",
+			"cmsisPack": "${command:device-manager.getDevicePack}",
 			"problemMatcher": [],
-			"label": "embedded-debug.flash: Flash STM32U5xx",
-			"group": "build"
+			"dependsOn": "CMSIS Build"
 		},
 		{
+			"label": "CMSIS Build",
 			"type": "cmsis-csolution.build",
-			"project": "${command:cmsis-csolution.getCprjPath}",
+			"solution": "${command:cmsis-csolution.getSolutionPath}",
+			"project": "${command:cmsis-csolution.getProjectPath}",
+			"buildType": "${command:cmsis-csolution.getBuildType}",
+			"targetType": "${command:cmsis-csolution.getTargetType}",
 			"problemMatcher": [],
-			"label": "cmsis-csolution.build: Build"
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		}
 	]
 }

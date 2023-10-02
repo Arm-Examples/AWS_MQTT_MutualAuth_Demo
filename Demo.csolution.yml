@@ -6,7 +6,7 @@ solution:
   compiler: AC6
 
   packs:
-    - pack: ARM::CMSIS
+    - pack: ARM::CMSIS@5.9.0
     - pack: ARM::CMSIS-Driver
     - pack: ARM::CMSIS-FreeRTOS@10.4.6
     - pack: ARM::mbedTLS@1.7.0

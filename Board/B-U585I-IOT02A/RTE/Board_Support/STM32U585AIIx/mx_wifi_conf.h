@@ -45,7 +45,7 @@ int32_t mxwifi_probe(void **ll_drv_context);
 /* Configure DMA usage for SPI communication with WiFi Module, 
    value 1 = DMA is used, value 0 = DMA is not used (IRQ) */
 #ifndef MX_WIFI_SPI_DMA
-#define MX_WIFI_SPI_DMA                                                     (0)
+#define MX_WIFI_SPI_DMA                                                     (1)
 #endif /* MX_WIFI_SPI_DMA */
 
 /* do not use RTOS but bare metal approach by default */
