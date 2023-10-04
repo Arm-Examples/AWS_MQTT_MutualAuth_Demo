@@ -74,7 +74,7 @@ project:
     - group: config_files
       files:
         - file: ./config_files/aws_demo_config.h
-        - file: ./config_files/aws_iot_network_Config.h
+        - file: ./config_files/aws_iot_network_config.h
         - file: ./config_files/aws_mbedtls_config.h
         - file: ./config_files/core_mqtt_config.h
         - file: ./config_files/core_pkcs11_config.h
