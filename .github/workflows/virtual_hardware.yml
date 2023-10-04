@@ -53,8 +53,8 @@ jobs:
 
     - name: Install AVH Client for Python
       run: |
-        pip install git+https://github.com/ARM-software/avhclient.git@v0.1
-
+        pip install arm-avhclient
+        
     - name: Configure AWS IoT Thing Credentials
       env:
         MQTT_BROKER_ENDPOINT: ${{ secrets.MQTT_BROKER_ENDPOINT }}
