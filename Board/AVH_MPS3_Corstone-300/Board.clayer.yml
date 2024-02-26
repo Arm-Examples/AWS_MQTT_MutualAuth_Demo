@@ -23,7 +23,7 @@ layer:
   #   - pack: ARM::CMSIS
   #   - pack: ARM::CMSIS-Driver
   #   - pack: Keil::ARM_Compiler
-  #   - pack: ARM::V2M_MPS3_SSE_300_BSP@1.2.0
+  #   - pack: ARM::V2M_MPS3_SSE_300_BSP@1.5.0
 
   processor:
     trustzone: secure
@@ -41,10 +41,13 @@ layer:
 
   components:
     - component: ARM::Device:Definition
-    - component: ARM::Device:Startup&Baremetal
+    - component: ARM::Device:Startup&C Startup
 
-    - component: ARM::Native Driver:IO
-    - component: ARM::Native Driver:UART
+    - component: ARM::Device:Native Driver:IO
+    - component: ARM::Device:Native Driver:UART
+    - component: ARM::Device:Native Driver:SysCounter
+    - component: ARM::Device:Native Driver:SysTimer
+    - component: ARM::Device:Native Driver:Timeout
 
     - component: ARM::CMSIS:CORE
 
@@ -52,15 +55,13 @@ layer:
     - component: Keil::CMSIS Driver:Ethernet:ETH_LAN91C111
     - component: ARM::CMSIS Driver:VIO:Custom
 
-    - component: Keil::Compiler&ARM Compiler:Event Recorder&DAP
-    - component: Keil::Compiler&ARM Compiler:I/O:STDERR&User
-    - component: Keil::Compiler&ARM Compiler:I/O:STDOUT&User
-    - component: Keil::Compiler&ARM Compiler:I/O:STDIN&User
+    - component: ARM::CMSIS-View:Event Recorder&Semihosting
 
   groups:
     - group: Board
       files:
+        - file: ./AVH_MPS3_Corstone_300.h
         - file: ./main.c
-        - file: ./retarget_stdio.c
         - file: ./Driver/vio_V2M-MPS3-SSE-300.c
-        - file: ./RTE/Device/SSE-300-MPS3/fvp_sse300_mps3_s.sct
+        - file: ./RTE/Device/SSE_300_MPS3/regions_V2M_MPS3_SSE_300_FVP.h
+

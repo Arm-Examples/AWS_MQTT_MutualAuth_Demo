@@ -41,9 +41,6 @@ Refer to ["Migrate STM32 Based Example Projects to Custom Hardware"](https://git
 | vioBUTTON0        | Button USER (PC13)
 | vioLED0           | LED RED (PH6)
 | vioLED1           | LED GREEN (PH7)
-| vioMotionGyro     | iNEMO 3D gyroscope (ISM330DLC)
-| vioMotionAccelero | iNEMO 3D accelerometer (ISM330DLC)
-| vioMotionMagneto  | High accuracy 3-axis magnetometer (IIS2MDC)
 
 ## Board configuration
 

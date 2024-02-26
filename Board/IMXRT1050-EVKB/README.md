@@ -1,7 +1,7 @@
 Board: NXP IMXRT1050-EVKB
 -------------------------
 
-The tables below list the device configuration for this board. The board layer for the NXP IMXRT1050-EVKB is using the software component `::Board Support: SDK Project Template: project_template (Variant: evkbimxrt1050)` from `NXP.EVKB-IMXRT1050_BSP.15.0.0` pack.
+The tables below list the device configuration for this board. The board layer for the NXP IMXRT1050-EVKB is using the software component `::Board Support: SDK Project Template: project_template (Variant: evkbimxrt1050)` from `NXP.EVKB-IMXRT1050_BSP.17.0.0` pack.
 
 The heap/stack setup and the CMSIS-Driver assignment is in configuration files of related software components.
 
@@ -88,9 +88,29 @@ The example project can be re-configured to work on custom hardware. Refer to ["
 | MCI0         | USDHC1
 | USART3       | LPUART3
 
+### CMSIS-Driver Virtual I/O mapping
+
 | CMSIS-Driver VIO  | Physical board hardware
 |:------------------|:-----------------------
 | vioBUTTON0        | User Button SW8 (WAKEUP)
 | vioLED0           | User LED (GPIO_AD_B0_09)
-| vioMotionAccelero | 3-Axis Accelerometer (FXOS8700CQ)
-| vioMotionMagneto  | 3-Axis Magnetometer (FXOS8700CQ)
+
+### Arduino UNO mapping
+
+| Arduino resource  | Driver
+|:------------------|:-------------------------------
+| UART (D0,D1)      | USART3 Driver (ARDUINO_UNO_UART)
+| Digital I/O: D2   | GPIO0 Driver (ARDUINO_UNO_D2)
+| Digital I/O: D3   | GPIO0 Driver (ARDUINO_UNO_D3)
+| Digital I/O: D4   | GPIO0 Driver (ARDUINO_UNO_D4)
+| Digital I/O: D5   | GPIO0 Driver (ARDUINO_UNO_D5)
+| Digital I/O: D6   | GPIO0 Driver (ARDUINO_UNO_D6)
+| Digital I/O: D7   | GPIO0 Driver (ARDUINO_UNO_D7)
+| Digital I/O: D8   | GPIO0 Driver (ARDUINO_UNO_D8)
+| Digital I/O: D9   | GPIO0 Driver (ARDUINO_UNO_D9)
+| Digital I/O: D14  | GPIO0 Driver (ARDUINO_UNO_D14)
+| Digital I/O: D15  | GPIO0 Driver (ARDUINO_UNO_D15)
+| Digital I/O: D16  | GPIO0 Driver (ARDUINO_UNO_D16)
+| Digital I/O: D17  | GPIO0 Driver (ARDUINO_UNO_D17)
+| Digital I/O: D18  | GPIO0 Driver (ARDUINO_UNO_D18)
+| Digital I/O: D19  | GPIO0 Driver (ARDUINO_UNO_D19)
