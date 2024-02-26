@@ -2,11 +2,13 @@
 
 solution:
   description: This demo application connects to AWS MQTT broker using TLS with mutual authentication between the client and the server
-  created-for: CMSIS-Toolbox@2.0.0
+  created-for: CMSIS-Toolbox@2.2.1
   compiler: AC6
 
   packs:
-    - pack: ARM::CMSIS@5.9.0
+    - pack: ARM::CMSIS@>=6.0.0
+    - pack: ARM::CMSIS-View@1.1.0
+    - pack: ARM::CMSIS-Compiler@2.0.0
     - pack: ARM::CMSIS-Driver
     - pack: ARM::CMSIS-FreeRTOS@10.4.6
     - pack: ARM::mbedTLS@1.7.0
