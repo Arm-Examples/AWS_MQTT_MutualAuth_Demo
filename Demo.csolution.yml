@@ -28,8 +28,8 @@ solution:
     - pack: Keil::IMXRT1050-EVKB_BSP@1.1.0
     - pack: Keil::iMXRT105x_MWP@1.5.0
 
-    - pack: Keil::STM32U5xx_DFP@2.0.0
-    - pack: Keil::B-U585I-IOT02A_BSP@1.0.0
+    - pack: Keil::STM32U5xx_DFP@2.1.0
+    - pack: Keil::B-U585I-IOT02A_BSP@1.1.0
 
   target-types:
     - type: IP-Stack

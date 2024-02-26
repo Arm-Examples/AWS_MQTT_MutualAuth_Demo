@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -292,6 +293,8 @@ void HAL_I2C_MspDeInit(I2C_HandleTypeDef* hi2c)
 
 }
 
+static uint32_t HAL_RCC_OSPIM_CLK_ENABLED=0;
+
 /**
 * @brief OSPI MSP Initialization
 * This function configures the hardware resources used in this example
@@ -318,6 +321,10 @@ void HAL_OSPI_MspInit(OSPI_HandleTypeDef* hospi)
     }
 
     /* Peripheral clock enable */
+    HAL_RCC_OSPIM_CLK_ENABLED++;
+    if(HAL_RCC_OSPIM_CLK_ENABLED==1){
+      __HAL_RCC_OSPIM_CLK_ENABLE();
+    }
     __HAL_RCC_OSPI1_CLK_ENABLE();
 
     __HAL_RCC_GPIOI_CLK_ENABLE();
@@ -409,6 +416,10 @@ void HAL_OSPI_MspInit(OSPI_HandleTypeDef* hospi)
     }
 
     /* Peripheral clock enable */
+    HAL_RCC_OSPIM_CLK_ENABLED++;
+    if(HAL_RCC_OSPIM_CLK_ENABLED==1){
+      __HAL_RCC_OSPIM_CLK_ENABLE();
+    }
     __HAL_RCC_OSPI2_CLK_ENABLE();
 
     __HAL_RCC_GPIOI_CLK_ENABLE();
@@ -470,6 +481,10 @@ void HAL_OSPI_MspDeInit(OSPI_HandleTypeDef* hospi)
 
   /* USER CODE END OCTOSPI1_MspDeInit 0 */
     /* Peripheral clock disable */
+    HAL_RCC_OSPIM_CLK_ENABLED--;
+    if(HAL_RCC_OSPIM_CLK_ENABLED==0){
+      __HAL_RCC_OSPIM_CLK_DISABLE();
+    }
     __HAL_RCC_OSPI1_CLK_DISABLE();
 
     /**OCTOSPI1 GPIO Configuration
@@ -509,6 +524,10 @@ void HAL_OSPI_MspDeInit(OSPI_HandleTypeDef* hospi)
 
   /* USER CODE END OCTOSPI2_MspDeInit 0 */
     /* Peripheral clock disable */
+    HAL_RCC_OSPIM_CLK_ENABLED--;
+    if(HAL_RCC_OSPIM_CLK_ENABLED==0){
+      __HAL_RCC_OSPIM_CLK_DISABLE();
+    }
     __HAL_RCC_OSPI2_CLK_DISABLE();
 
     /**OCTOSPI2 GPIO Configuration
