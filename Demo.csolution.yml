@@ -21,7 +21,7 @@ solution:
     - pack: Keil::ARM_Compiler
     - pack: MDK-Packs::IoT_Socket
 
-    - pack: ARM::V2M_MPS3_SSE_300_BSP@1.2.0
+    - pack: ARM::V2M_MPS3_SSE_300_BSP@1.5.0
 
     - pack: NXP::MIMXRT1052_DFP@17.0.0
     - pack: NXP::EVKB-IMXRT1050_BSP@17.0.0
