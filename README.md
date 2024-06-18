@@ -1,5 +1,6 @@
 AWS coreMQTT Mutual Authentication Demo
 =======================================
+[![CMSIS Compliance](https://img.shields.io/github/actions/workflow/status/Arm-Examples/AWS_MQTT_MutualAuth_Demo/verify.yml?logo=arm&logoColor=0091bd&label=CMSIS%20Compliance)](https://www.keil.arm.com/cmsis) 
 
 This demo application connects to **AWS MQTT broker** using TLS with mutual authentication between the client and the server.
 It demonstrates the subscribe-publish workflow of MQTT.
