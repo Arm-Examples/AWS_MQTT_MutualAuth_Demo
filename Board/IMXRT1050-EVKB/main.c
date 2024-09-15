@@ -30,9 +30,11 @@
 #include "clock_config.h"
 #include "board.h"
 #include "pin_mux.h"
+#include "peripherals.h"
 #include "fsl_iomuxc.h"
 #include "fsl_dmamux.h"
 #include "fsl_sai_edma.h"
+#include "fsl_fxos.h"
 #include "main.h"
 
 // Callbacks for LPUART1 Driver
@@ -49,6 +51,7 @@ int main (void) {
   edma_config_t DmaConfig;
 
   BOARD_ConfigMPU();
+  BOARD_InitBootPeripherals();
   BOARD_InitBootPins();
   BOARD_InitBootClocks();
   BOARD_InitDebugConsole();

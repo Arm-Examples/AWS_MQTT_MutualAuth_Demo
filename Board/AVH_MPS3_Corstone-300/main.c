@@ -30,8 +30,6 @@ extern int stdio_init (void);
 
 int main (void) {
 
-  stdio_init();                         // Initialize stdio
-
   vioInit();                            // Initialize Virtual I/O
 
 #if defined(RTE_Compiler_EventRecorder) && \

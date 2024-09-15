@@ -71,6 +71,9 @@ project:
     - group: main
       files:
         - file: ./app_main.c
+        - file: ./entropy_poll.c
+          define:
+            - MBEDTLS_CONFIG_FILE: \"aws_mbedtls_config.h\"
     - group: config_files
       files:
         - file: ./config_files/aws_demo_config.h

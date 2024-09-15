@@ -25,8 +25,8 @@ layer:
   # packs:
   #   - pack: ARM::CMSIS
   #   - pack: Keil::ARM_Compiler
-  #   - pack: Keil::STM32U5xx_DFP@1.2.0
-  #   - pack: Keil::B-U585I-IOT02A_BSP@1.0.0
+  #   - pack: Keil::STM32U5xx_DFP@2.1.0
+  #   - pack: Keil::B-U585I-IOT02A_BSP@1.1.0
 
   processor:
     trustzone: off
@@ -38,7 +38,7 @@ layer:
     - MX_WIFI_SPI_DMA: 0   # Do not use DMA if TZEN=1
 
   components:
-    - component: Keil::Device:Startup
+    - component: Keil::Device:Startup&Source C
 
     - component: Keil::Device:STM32Cube Framework:STM32CubeMX
 
@@ -84,10 +84,11 @@ layer:
     - component: Keil::CMSIS Driver:VIO
     - component: Keil::CMSIS Driver:WiFi:EMW3080
 
-    - component: Keil::Compiler&ARM Compiler:Event Recorder&DAP
-    - component: Keil::Compiler&ARM Compiler:I/O:STDERR&User
-    - component: Keil::Compiler&ARM Compiler:I/O:STDOUT&User
-    - component: Keil::Compiler&ARM Compiler:I/O:STDIN&User
+    - component: ARM::CMSIS-View:Event Recorder&DAP
+    - component: ARM::CMSIS-Compiler:CORE
+    - component: ARM::CMSIS-Compiler:STDERR:Custom
+    - component: ARM::CMSIS-Compiler:STDOUT:Custom
+    - component: ARM::CMSIS-Compiler:STDIN:Custom
 
   groups:
     - group: Board
